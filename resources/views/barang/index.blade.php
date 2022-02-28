@@ -1,12 +1,16 @@
 @extends('template')
 @section('content')
-    <div class="row mt-5 mb-5">
+    <div class="row mt-5 mb-2">
         <div class="col-lg-12 margin-tb">
             <div class="float-left">
                 <h2>Daftar Barang</h2>
             </div>
             <div class="float-right">
                 <a href="{{ route('barang.create') }}" class="btn btn-success">Tambah Barang</a>
+                <form action="/logout" method="post">
+                    @csrf
+                    <button type="submit" class="btn btn-danger mt-2">Logout</button>
+                </form>
             </div>
         </div>
     </div>
@@ -21,6 +25,7 @@
             <th>Nama Barang</th>
             <th width="280px" class="text-center">Harga Barang</th>
             <th width="280px" class="text-center">Deskripsi</th>
+            <th>Action</th>
         </tr>
         @foreach ($barang as $b )
             <tr>

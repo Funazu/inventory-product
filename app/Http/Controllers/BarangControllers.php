@@ -18,6 +18,7 @@ class BarangControllers extends Controller
         // $barang = Barang::latest()->paginate();
         // return view('barang.index',compact('barang'))->with('i', (request()->input('page', 1) -1) * 5);
         return view('barang.index', [
+            'title' => 'Home',
             'barang' => Barang::all()
         ])->with('i');
     }
@@ -29,7 +30,9 @@ class BarangControllers extends Controller
      */
     public function create()
     {
-        return view('barang.create');
+        return view('barang.create', [
+            'title' => 'Create'
+        ]);
     }
 
     /**
@@ -57,7 +60,9 @@ class BarangControllers extends Controller
      */
     public function show(Barang $barang)
     {
-        return view('barang.show',compact('barang'));
+        return view('barang.show',[
+            'title' => 'Show'
+        ], compact('barang'));
     }
 
     /**
@@ -68,7 +73,9 @@ class BarangControllers extends Controller
      */
     public function edit(Barang $barang)
     {
-        return view('barang.edit', compact('barang'));
+        return view('barang.edit',[
+            'title' => 'Edit'
+        ], compact('barang'));
     }
 
     /**
