@@ -42,17 +42,17 @@
                 <input type="number" name="stok" class="form-control" placeholder="Stok Barang">
             </div>
         </div>
-        {{-- <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Pilih Category</strong>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" name="category_id">
                     <option selected>Pilih Category</option>
                     @foreach ($category as $c )
-                    <option value="3">{{ $c->name }}</option>
+                    <option value="{{ $c->id }}">{{ $c->name }}</option>
                     @endforeach
                   </select>
             </div>
-        </div> --}}
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Deskripsi Barang</strong>

@@ -25,6 +25,7 @@
             <th>Nama</th>
             <th width="280px" class="text-center">Harga</th>
             <th width="280px" class="text-center">Stok</th>
+            <th width="280px" class="text-center">Category</th>
             <th width="280px" class="text-center">Deskripsi</th>
             <th>Action</th>
         </tr>
@@ -34,6 +35,7 @@
                 <td>{{ $b->nama_barang }}</td>
                 <td>{{ $b->harga }}</td>
                 <td>{{ $b->stok }}</td>
+                <td>{{ $b->category->name }}</td>
                 <td>{{ $b->desc }}</td>
                 <td class="text-center">
                     <form action="{{ route('barang.destroy', $b->id) }}" method="POST">

@@ -13,7 +13,12 @@ class Barang extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'nama_barang', 'harga', 'desc', 'stok'
+        'nama_barang', 'harga', 'desc', 'stok', 'category_id'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
     
 }

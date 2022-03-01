@@ -21,7 +21,7 @@ class BarangControllers extends Controller
         return view('barang.index', [
             'title' => 'Home',
             'active' => 'barang',
-            'barang' => Barang::all(),
+            'barang' => Barang::with('category')->get(),
             // 'category' => Category::all()
         ])->with('i');
     }
@@ -36,6 +36,7 @@ class BarangControllers extends Controller
         return view('barang.create', [
             'title' => 'Create',
             'active' => 'barang',
+            'category' => Category::all()
         ]);
     }
 
@@ -50,7 +51,8 @@ class BarangControllers extends Controller
         $request->validate([
             'nama_barang' => 'required',
             'harga' => 'required',
-            'desc' => 'required'
+            'desc' => 'required',
+            'category_id' => 'required'
         ]);
         Barang::create($request->all());
         return redirect()->route('barang.index')->with('succes', 'Data Berhasil Ditambahkan');
