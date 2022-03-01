@@ -12,7 +12,8 @@ class RegisterController extends Controller
     public function index()
     {
         return view('auth.register', [
-            'title' => 'Registrasi'
+            'title' => 'Registrasi',
+            'active' => 'registrasi'
         ]);
     }
 

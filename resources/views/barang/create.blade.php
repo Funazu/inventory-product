@@ -3,7 +3,7 @@
     <div class="row mt-5 mb-5">
         <div class="col-lg-12 margin-tb">
             <div class="float-left">
-                <h2>Tambah barang baru</h2>
+                <h2>Tambah Barang Baru</h2>
             </div>
             <div class="float-right">
                 <a href="{{ route('barang.index') }}" class="btn btn-secondary">Kembali</a>
@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nama Barang :</strong>
+                <strong>Nama Barang</strong>
                 <input type="text" name="nama_barang" class="form-control" placeholder="Nama Barang">
             </div>
         </div>  
@@ -38,11 +38,28 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Deskripsi</strong>
+                <strong>Stok Barang</strong>
+                <input type="number" name="stok" class="form-control" placeholder="Stok Barang">
+            </div>
+        </div>
+        {{-- <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Pilih Category</strong>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Pilih Category</option>
+                    @foreach ($category as $c )
+                    <option value="3">{{ $c->name }}</option>
+                    @endforeach
+                  </select>
+            </div>
+        </div> --}}
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Deskripsi Barang</strong>
                 <textarea name="desc" style="height: 150px" class="form-control" placeholder="Content"></textarea>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
             <button class="btn btn-primary">Submit</button>
         </div>
     </div>

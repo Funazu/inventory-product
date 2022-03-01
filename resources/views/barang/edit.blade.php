@@ -33,17 +33,23 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Harga</strong>
+                <strong>Harga Barang</strong>
                 <input type="number" name="harga" id="harga" value="{{ $barang->harga }}" placeholder="HARGA BARANG" class="form-control">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Desc</strong>
-                <textarea name="desc" id="desc" class="form-control" style="height:150px" placeholder="content">{{ $barang->desc }}</textarea>
+                <strong>Stok Barang</strong>
+                <input type="number" name="stok" id="stok" value="{{ $barang->stok }}" placeholder="STOK BARANG" class="form-control">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Deskripsi Barang</strong>
+                <textarea name="desc" id="desc" class="form-control" style="height:150px" placeholder="content">{{ $barang->desc }}</textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
             <button class="btn btn-primary" type="submit">Update</button>
         </div>
     </div>

@@ -26,6 +26,12 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>Stok : </strong>
+                {{ $barang->stok }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>Deskripsi : </strong>
                 {{ $barang->desc }}
             </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Barang;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -19,7 +20,9 @@ class BarangControllers extends Controller
         // return view('barang.index',compact('barang'))->with('i', (request()->input('page', 1) -1) * 5);
         return view('barang.index', [
             'title' => 'Home',
-            'barang' => Barang::all()
+            'active' => 'barang',
+            'barang' => Barang::all(),
+            // 'category' => Category::all()
         ])->with('i');
     }
 
@@ -31,7 +34,8 @@ class BarangControllers extends Controller
     public function create()
     {
         return view('barang.create', [
-            'title' => 'Create'
+            'title' => 'Create',
+            'active' => 'barang',
         ]);
     }
 
@@ -61,7 +65,8 @@ class BarangControllers extends Controller
     public function show(Barang $barang)
     {
         return view('barang.show',[
-            'title' => 'Show'
+            'title' => 'Show',
+            'active' => 'barang',
         ], compact('barang'));
     }
 
@@ -71,10 +76,11 @@ class BarangControllers extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Barang $barang)
+    public function edit(Barang $barang, Category $category)
     {
         return view('barang.edit',[
-            'title' => 'Edit'
+            'title' => 'Edit',
+            'active' => 'barang'
         ], compact('barang'));
     }
 
@@ -90,6 +96,7 @@ class BarangControllers extends Controller
         $request->validate([
             'nama_barang' => 'required',
             'harga' => 'required',
+            'stok' => 'required',
             'desc' => 'required'
         ]);
 
