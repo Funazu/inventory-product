@@ -22,7 +22,7 @@ class HomeController extends Controller
         return view('home.product', [
             'title' => 'Detail',
             'active' => 'home',
-            'barang' => Barang::all()
+            // 'barang' => Barang::all()
         ], compact('barang'));
     }
 }

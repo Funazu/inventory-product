@@ -39,7 +39,7 @@
         
           @else
           <li class="nav-item">
-            <a href="/login" class="nav-link {{ ($active === 'home') ? 'active' : ''}}"><i class="bi bi-box-arrow-in-right"></i> Admin</a>
+            <a href="/login" class="nav-link {{ ($active === 'home') ? 'active' : ''}}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
           </li>
           @endauth
         </ul>
