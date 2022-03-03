@@ -6,7 +6,7 @@
       @foreach($barang as $b)
       <div class="col">
         <div class="card">
-          <img src="..." class="card-img-top" alt="...">
+          <img src="{{ asset('storage/' . $b->image) }}" class="card-img-top" width="250px" height="250x">
           <div class="card-body">
             <h5 class="card-title">{{ $b->nama_barang }}</h5>
             <p class="card-text">Rp {{ number_format($b->harga) }}</p>
