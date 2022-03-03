@@ -1,27 +1,27 @@
 @extends('template')
 @section('content')
-    <div class="row mt-5 mb-5">
-        <div class="col-lg-12 margin-tb">
-            <div class="float-left">
-                <h2>Tambah Barang Baru</h2>
-            </div>
-            <div class="float-right">
-                <a href="{{ route('barang.index') }}" class="btn btn-secondary">Kembali</a>
-            </div>
+<div class="row mt-5 mb-5">
+    <div class="col-lg-12 margin-tb">
+        <div class="float-left">
+            <h2>Tambah Barang Baru</h2>
+        </div>
+        <div class="float-right">
+            <a href="{{ route('barang.index') }}" class="btn btn-secondary">Kembali</a>
         </div>
     </div>
-    @if($errors->any())
-        <div class="alert alert-danger">
-            <strong>Whoops</strong>Input Gagal. <br> <br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+</div>
+@if($errors->any())
+<div class="alert alert-danger">
+    <strong>Whoops</strong>Input Gagal. <br> <br>
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 
-    <form action="{{ route('barang.store') }}" method="post">
+<form action="{{ route('barang.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -29,7 +29,7 @@
                 <strong>Nama Barang</strong>
                 <input type="text" name="nama_barang" class="form-control" placeholder="Nama Barang">
             </div>
-        </div>  
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Harga Barang</strong>
@@ -50,8 +50,13 @@
                     @foreach ($category as $c )
                     <option value="{{ $c->id }}">{{ $c->name }}</option>
                     @endforeach
-                  </select>
+                </select>
             </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <!-- <label for="formFile" class="form-label">Default file input example</label> -->
+            <strong>Pilih Gambar</strong>
+            <input class="form-control" type="file" id="image" name="image">
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -63,5 +68,5 @@
             <button class="btn btn-primary">Submit</button>
         </div>
     </div>
-    </form>
+</form>
 @endsection

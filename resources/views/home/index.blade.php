@@ -9,11 +9,8 @@
           <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{ $b->nama_barang }}</h5>
-            <p class="card-text">{{ $b->desc }}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">{{ $b->harga }}</small>
+            <p class="card-text">Rp {{ number_format($b->harga) }}</p>
+            <a href="{{ route('barang.show',$b->id) }}" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
       </div>

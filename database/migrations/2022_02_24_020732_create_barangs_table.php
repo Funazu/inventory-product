@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('harga');
             $table->string('stok');
             $table->string('desc');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

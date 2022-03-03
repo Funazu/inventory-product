@@ -16,4 +16,13 @@ class HomeController extends Controller
             'barang' => Barang::all()
         ]);
     }
+
+    public function show()
+    {
+        return view('home.product', [
+            'title' => 'Detail',
+            'active' => 'home',
+            'barang' => Barang::all()
+        ]);
+    }
 }

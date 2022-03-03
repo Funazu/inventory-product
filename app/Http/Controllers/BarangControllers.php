@@ -19,7 +19,7 @@ class BarangControllers extends Controller
         // $barang = Barang::latest()->paginate();
         // return view('barang.index',compact('barang'))->with('i', (request()->input('page', 1) -1) * 5);
         return view('barang.index', [
-            'title' => 'Home',
+            'title' => 'Produk',
             'active' => 'barang',
             'barang' => Barang::with('category')->get(),
             // 'category' => Category::all()
@@ -48,13 +48,24 @@ class BarangControllers extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        // return $request->file('image')->store('gambar-produk');
+
+        $validatedData = $request->validate([
             'nama_barang' => 'required',
             'harga' => 'required',
+            'stok' => 'required',
             'desc' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'image' => 'image|file|max:2048'
         ]);
-        Barang::create($request->all());
+
+        if($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('gambar-produk');
+        }
+            
+
+            
+        Barang::create($validatedData);
         return redirect()->route('barang.index')->with('succes', 'Data Berhasil Ditambahkan');
     }
 
