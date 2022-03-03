@@ -24,7 +24,7 @@
           <p><i class="fas fa-clock"></i> Estimasi tiba <b>Besok</b></p>
           @if ($barang->stok > 0)
           <div class="d-grid gap-2">
-            <a href="" class="btn btn-primary btn-block"><i class="fas fa-shopping-cart"></i> Buy</a>
+            <a href="/order/buy/{{ $barang->id }}" class="btn btn-primary btn-block"><i class="fas fa-shopping-cart"></i> Buy</a>
           </div>
           @else
           <div class="alert alert-danger" role="alert">

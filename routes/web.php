@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +31,8 @@ Route::resource('category', CategoryController::class)->middleware('auth');
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/produk/{barang:id}', [HomeController::class, 'show']);
+
+Route::post('/order/buy/success', [OrderController::class, 'store']);
+Route::resource('order', OrderController::class);
+Route::get('/order/buy/{barang:id}', [OrderController::class, 'index']);
+Route::get('/order/kwitansi/{order:id}', [OrderController::class, 'show']);
