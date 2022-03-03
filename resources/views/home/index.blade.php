@@ -10,7 +10,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ $b->nama_barang }}</h5>
             <p class="card-text">Rp {{ number_format($b->harga) }}</p>
-            <a href="{{ route('barang.show',$b->id) }}" class="btn btn-primary">Go somewhere</a>
+            <a href="/produk/{{ $b->id }}" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
       </div>
