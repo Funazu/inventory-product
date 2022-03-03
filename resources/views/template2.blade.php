@@ -10,7 +10,7 @@
     <title>Barang | {{ $title }}</title>
 </head>
 <body>
-    
+@include('navbar2')
 
     <div class="container">
         @yield('content')

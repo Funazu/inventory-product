@@ -7,10 +7,10 @@
             </div>
             <div class="float-right">
                 <a href="{{ route('category.create') }}" class="btn btn-success">Tambah Category</a>
-                <form action="/logout" method="post">
+                <!-- <form action="/logout" method="post">
                     @csrf
                     <button type="submit" class="btn btn-danger mt-2">Logout</button>
-                </form>
+                </form> -->
             </div>
         </div>
     </div>

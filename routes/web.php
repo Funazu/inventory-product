@@ -4,6 +4,7 @@ use App\Http\Controllers\BarangControllers;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,5 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::resource('barang', BarangControllers::class)->middleware('auth');
 Route::resource('category', CategoryController::class)->middleware('auth');
+
+Route::get('/', [HomeController::class, 'index']);
