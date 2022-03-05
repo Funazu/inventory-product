@@ -26,6 +26,7 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="/category"><i class="bi bi-layout-text-window-reverse"></i>Category</a></li>
               <li><a class="dropdown-item" href="/barang"><i class="bi bi-layout-text-window-reverse"></i>Produk</a></li>
+              <li><a class="dropdown-item" href="/order"><i class="bi bi-layout-text-window-reverse"></i>Order</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>

@@ -15,13 +15,11 @@ class OrderController extends Controller
      */
     public function index(Barang $barang)
     {
-        $ongkir = 25000;
-        return view('order.index', [
-            'title' => 'Order',
+        return view('order.all', [
+            'title' => 'ALL ORDER',
             'active' => 'home',
-            'ongkir' => $ongkir
-
-        ], compact('barang'));
+            'order' => Order::all()
+        ])->with('i');
     }
 
     /**
@@ -29,9 +27,15 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Barang $barang)
     {
-        //
+        $ongkir = 25000;
+        return view('order.index', [
+            'title' => 'Order',
+            'active' => 'home',
+            'ongkir' => $ongkir
+
+        ], compact('barang'));
     }
 
     /**
@@ -54,7 +58,7 @@ class OrderController extends Controller
         ]);
 
         $order = Order::create($validatedData);
-        
+
         return view('order.success', [
             'title' => 'Success',
             'active' => 'home'
@@ -74,6 +78,14 @@ class OrderController extends Controller
             'active' => 'home'
         ], compact('order'));
     }
+
+    // public function all()
+    // {
+    //     return view('order.all', [
+    //         'title' => 'ALL',
+    //         'active' => 'home'
+    //     ]);
+    // }
 
     /**
      * Show the form for editing the specified resource.

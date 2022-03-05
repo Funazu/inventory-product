@@ -33,6 +33,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/produk/{barang:id}', [HomeController::class, 'show']);
 
 Route::post('/order/buy/success', [OrderController::class, 'store']);
-Route::resource('order', OrderController::class);
-Route::get('/order/buy/{barang:id}', [OrderController::class, 'index']);
+// Route::resource('order', OrderController::class);
+Route::get('/order/buy/{barang:id}', [OrderController::class, 'create']);
 Route::get('/order/kwitansi/{order:id}', [OrderController::class, 'show']);
+Route::get('/order', [OrderController::class, 'index'])->middleware('auth');

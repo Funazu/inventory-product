@@ -15,4 +15,9 @@ class Order extends Model
     protected $fillable = [
         'jumlah_pembelian', 'barang_id', 'total_harga', 'alamat', 'ekspedisi', 'nomer_telepon', 'nama_pembeli'
     ];
+
+    public function barang()
+    {
+        return $this->belongsTo(Barang::class);
+    }
 }
