@@ -9,8 +9,7 @@
         <tr>
           <th>Informasi</th>
           <th>Informasi.</th>
-    
-          <th>Total Harga</th>
+          <th>Harga</th>
         </tr>
         <tr>
           <td>Nama Pembeli</td>
@@ -29,6 +28,15 @@
           <td>{{ $order->nomer_telepon }}</td>
           <td></td>
     
+        </tr>
+        <tr>
+          <td>Nama Barang</td>
+          <td>{{ $order->barang->nama_barang }}</td>
+          <td>Rp. {{ number_format($order->barang->harga) }}</td>
+        </tr>
+        <tr>
+          <th colspan="2">Ongkir</th>
+          <td>Rp. {{ number_format($ongkir) }}</td>
         </tr>
         <tr>
           <th colspan="2">Total Harga</th>

@@ -73,9 +73,11 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        $ongkir = 25000;
         return view('order.kwitansi', [
             'title' => 'Kwitansi',
-            'active' => 'home'
+            'active' => 'home',
+            'ongkir' => $ongkir
         ], compact('order'));
     }
 

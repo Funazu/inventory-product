@@ -30,7 +30,7 @@ Route::resource('barang', BarangControllers::class)->middleware('auth');
 Route::resource('category', CategoryController::class)->middleware('auth');
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/produk/{barang:id}', [HomeController::class, 'show']);
+// Route::get('/produk/{barang:id}', [HomeController::class, 'show']);
 
 Route::post('/order/buy/success', [OrderController::class, 'store']);
 // Route::resource('order', OrderController::class);

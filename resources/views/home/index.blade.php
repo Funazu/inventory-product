@@ -9,7 +9,10 @@
           <div class="card-body">
             <h5 class="card-title">{{ $b->nama_barang }}</h5>
             <p class="card-text">Rp {{ number_format($b->harga) }}</p>
-            <a href="/produk/{{ $b->id }}" class="btn btn-primary">Detail</a>
+            <hr>
+            <p class="card-text"><i class="fas fa-cubes"></i> Stok {{ $b->stok }} | <i class="fas fa-layer-group"></i> {{ $b->category->name }}</p>
+            <hr>
+            <a href="/order/buy/{{ $b->id }}" class="btn btn-primary">Buy</a>
           </div>
         </div>
       </div>
