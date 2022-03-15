@@ -44,6 +44,17 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
+            <!-- <label for="formFile" class="form-label">Default file input example</label> -->
+            <strong>Post Image</strong>
+            <input type="hidden" name="oldImage" id="{{ $barang->image }}">
+            @if($barang->image)
+            <img src="{{ asset('storage/' . $barang->image) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+            @else
+            <img class="img-preview img-fluid mb-3 col-sm-5">
+            @endif
+            <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Deskripsi Barang</strong>
                 <textarea name="desc" id="desc" class="form-control" style="height:150px" placeholder="content">{{ $barang->desc }}</textarea>
