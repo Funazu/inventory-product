@@ -13,6 +13,7 @@
             <div class="col-md-10">
               <h5>{{ $barang->nama_barang }}</h5>
               <b>Rp {{ number_format($barang->harga) }}</b>
+              <p>{{ $barang->desc }}</p>
             </div>
           </div>
         </div>

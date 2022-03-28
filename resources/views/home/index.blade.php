@@ -3,7 +3,7 @@
 <div class="container mt-5 mb-3">
   <div class="row mt-5 mb-2">
       @foreach($barang as $b)
-      <div class="col-4 mt-3 mb-3">
+      <div class="col-3 mt-3 mb-3">
         <div class="card h-100">
           <img src="{{ asset('storage/' . $b->image) }}" class="card-img-top">
           <div class="card-body">
@@ -12,7 +12,7 @@
             <hr>
             <p class="card-text"><i class="fas fa-cubes"></i> Stok {{ $b->stok }} | <i class="fas fa-layer-group"></i> {{ $b->category->name }}</p>
             <hr>
-            <a href="/order/buy/{{ $b->id }}" class="btn btn-primary">Buy</a>
+            <a href="/produk/{{ $b->id }}" class="btn btn-primary">Buy</a>
           </div>
         </div>
       </div>
